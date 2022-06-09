@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/User"
+        android:title="User" >
+        <!-- "file" submenu -->
+        <menu>
+            <item android:id="@+id/addUser"
+                android:title="Add User" />
+            <item android:id="@+id/removeUser"
+                android:title="Remove User" />
+            <item android:id="@+id/BlockUser"
+                android:title="Block User" />
+            <item android:id="@+id/userPermission"
+                android:title="Permission" />
+
+        </menu>
+    </item>
+    <item
+        android:id="@+id/Manage"
+        android:title="Manage" >
+        <!-- "file" submenu -->
+        <menu>
+            <item android:id="@+id/class_"
+                android:title="Class" />
+            <item android:id="@+id/subject"
+                android:title="Subject" />
+            <item android:id="@+id/chapter"
+                android:title="Chapter" />
+            <item android:id="@+id/notes"
+                android:title="Notes" />
+            <item android:id="@+id/question"
+                android:title="Question" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/Tools"
+        android:title="Tools" >
+        <!-- "file" submenu -->
+        <menu>
+            <item android:id="@+id/ChangePassword"
+                android:title="Change Password" />
+
+        </menu>
+    </item>
+</menu>
