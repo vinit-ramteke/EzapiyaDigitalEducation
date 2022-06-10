@@ -3,27 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="HardcodedText">
 
-    <item
-        android:id="@+id/User"
-        android:title="User" >
-        <!-- "file" submenu -->
-        <menu>
-            <item android:id="@+id/addUser"
-                android:title="Add User" />
-            <item android:id="@+id/removeUser"
-                android:title="Remove User" />
-            <item android:id="@+id/BlockUser"
-                android:title="Block User" />
-            <item android:id="@+id/userPermission"
-                android:title="Permission" />
 
-        </menu>
-    </item>
     <item
         android:id="@+id/Manage"
         android:title="Manage" >
         <!-- "file" submenu -->
         <menu>
+            <item android:id="@+id/manageUser"
+                android:title="Manage User" />
             <item android:id="@+id/class_"
                 android:title="Class" />
             <item android:id="@+id/subject"
@@ -46,4 +33,6 @@
 
         </menu>
     </item>
+    <item android:id="@+id/Logout"
+        android:title="Logout" />
 </menu>

@@ -42,66 +42,74 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="70"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.15"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.30"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="Class Name :-"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <Spinner
+                            android:id="@+id/spinner2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.70" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.15"
                         android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/textView2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="0.30"
                             android:gravity="center_horizontal|center_vertical"
                             android:text="Subject Name :-"
                             android:textColor="@color/white"
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/txtusername"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/txtchapterName"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="70"
+                            android:layout_weight="0.50"
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:text="" />
 
-                        <Button
-                            android:id="@+id/button"
-                            android:layout_width="wrap_content"
+                        <ImageButton
+                            android:id="@+id/btnaddsubject"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Add" />
+                            android:layout_weight="0.20"
+                            android:background="@color/purple_500"
+                            app:srcCompat="@drawable/add" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="30"
-                        android:orientation="vertical"></LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="70"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/btnlogin"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.70"
+                        android:orientation="vertical">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/subjectRecyclerView"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="5dp"
-                            android:layout_weight="50"
-                            android:text="Update" />
-
-                        <Button
-                            android:id="@+id/button4"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="5dp"
-                            android:layout_weight="50"
-                            android:text="Remove" />
-
+                            android:layout_height="match_parent" />
                     </LinearLayout>
+
                 </LinearLayout>
             </LinearLayout>
 

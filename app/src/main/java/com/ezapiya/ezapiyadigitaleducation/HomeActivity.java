@@ -1,27 +1,43 @@
 package com.ezapiya.ezapiyadigitaleducation;
 
+import com.ezapiya.ezapiyadigitaleducation.Model.createUser;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.WindowManager;
+import android.widget.Toast;
 
+import com.ezapiya.ezapiyadigitaleducation.Model.loginPojo;
+import com.ezapiya.ezapiyadigitaleducation.apiInterface.loginInterface;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
+    loginInterface LoginInterface;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         setNavigationViewListener();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+
+
+
 
         // drawer and back button to close drawer
         drawerLayout = findViewById(R.id.my_drawer_layout);
@@ -36,6 +52,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         loadFragment(new homefregment());
+        //loadFragment(new adduser());
     }
     private void loadFragment(Fragment fragment) {
         // create a FragmentManager
@@ -51,20 +68,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
 
-            case R.id.addUser: {
-                loadFragment(new adduser());
-                break;
-            }
-            case R.id.removeUser: {
-                loadFragment(new removeuser());
-                break;
-            }
-            case R.id.BlockUser: {
-                 loadFragment(new blockuser());
-                break;
-            }
-            case R.id.userPermission: {
-                 loadFragment(new userpermission());
+
+            case R.id.manageUser: {
+                 loadFragment(new manageuser());
                 break;
             }
             case R.id.class_: {
@@ -88,9 +94,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
             }
             case R.id.ChangePassword: {
-                  loadFragment(new changepassword());
+                    loadFragment(new changepassword());
+                    break;
+            }
+            case R.id.Logout: {
+                logoutFunction();
+
                 break;
             }
+
         }
         //close navigation drawer
         // mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -110,5 +122,25 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         return super.onOptionsItemSelected(item);
     }
+    public void logoutFunction()
+    {
+        LoginInterface=RetrofitInstance.getRetrofit().create(loginInterface.class);
+        Call<createUser> call = LoginInterface.logout("logout",Globle_data.loginData.getLoginkey());
+        call.enqueue(new Callback<createUser>() {
+            @Override
+            public void onResponse(Call<createUser> call, Response<createUser> response) {
+                createUser cu = new createUser();
+                cu= response.body();
+                Intent mainactivity = new Intent(HomeActivity.this,MainActivity.class);
+                startActivity(mainactivity);
+                finish();
+            }
 
+            @Override
+            public void onFailure(Call<createUser> call, Throwable t) {
+                String xx = t.getMessage();
+                Toast.makeText(HomeActivity.this,t.getMessage(),Toast.LENGTH_LONG).show();
+            }
+        });
+    }
 }

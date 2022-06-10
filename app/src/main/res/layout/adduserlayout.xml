@@ -4,160 +4,155 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:layout_alignParentBottom="true"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:minHeight="1000dp"
+        android:orientation="vertical"
+        android:weightSum="100">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            android:layout_weight="30"
+            android:background="@drawable/ic_launcher_background"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60"
+            android:background="@android:color/holo_orange_light"
+            android:orientation="vertical"
+            android:weightSum="100">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="60"
-                android:background="@drawable/ic_launcher_background"
-                android:orientation="vertical">
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    app:srcCompat="@drawable/usertype" />
+
+                <Spinner
+                    android:id="@+id/spnuserType"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="85"
+                    android:minHeight="100dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    app:srcCompat="@drawable/user_30" />
+
+                <EditText
+                    android:id="@+id/txtchapterName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="85"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:minHeight="150dp"
+                    android:text="" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="35"
-                android:background="@android:color/holo_orange_light"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="33"
-                    android:orientation="horizontal"
-                    android:padding="5dp"
-                    android:weightSum="100">
+                    android:layout_weight="15"
+                    app:srcCompat="@drawable/lock_30" />
 
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="17dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="30"
-                        app:srcCompat="@drawable/usertype" />
-
-                    <Spinner
-                        android:id="@+id/spinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="70" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/txtpassword"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="33"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
+                    android:layout_weight="85"
+                    android:ems="10"
+                    android:inputType="textPassword" />
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="30"
-                        app:srcCompat="@drawable/user_30" />
-
-                    <EditText
-                        android:id="@+id/txtusername"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="70"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="33"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="30"
-                        app:srcCompat="@drawable/lock_30" />
-
-                    <EditText
-                        android:id="@+id/txtpassword"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="70"
-                        android:ems="10"
-                        android:inputType="textPassword" />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="33"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:id="@+id/imageView21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="30"
-                        app:srcCompat="@drawable/lock_30" />
-
-                    <EditText
-                        android:id="@+id/txtpassword1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="70"
-                        android:ems="10"
-                        android:inputType="textPassword" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="33"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="30"
-                        android:orientation="horizontal"></LinearLayout>
-
-                    <Button
-                        android:id="@+id/btnlogin"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="50"
-                        android:text="Create" />
-
-                </LinearLayout>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imageView21"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    app:srcCompat="@drawable/lock_30" />
+
+                <EditText
+                    android:id="@+id/txtpassword1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="85"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <Button
+                    android:id="@+id/btnchangePasswrod"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:text="Create" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="90"
+            android:layout_height="0dp"
+            android:layout_weight="10"
             android:background="@color/design_default_color_error"
             android:orientation="vertical">
 
@@ -169,5 +164,4 @@
                 android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>
