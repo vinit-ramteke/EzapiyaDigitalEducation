@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.40"
+                android:background="@drawable/ic_launcher_background"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.50"
+                android:background="@android:color/holo_orange_light"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
+                            <Switch
+                                android:id="@+id/swtaddNewUser"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:switchMinWidth="56dp"
+                                android:text="Add New User"
+                                android:textOff="No"
+                                android:textOn="Yes" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
+                            <Switch
+                                android:id="@+id/swtblockUser"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:switchMinWidth="56dp"
+                                android:text="Block Other User"
+                                android:textOff="No"
+                                android:textOn="Yes" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
+                            <Switch
+                                android:id="@+id/swtremoveUser"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:switchMinWidth="56dp"
+                                android:text="Remove Other User"
+                                android:textOff="No"
+                                android:textOn="Yes" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
+                            <Switch
+                                android:id="@+id/swtchangePermission"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:switchMinWidth="56dp"
+                                android:text="Change Permission of Other User"
+                                android:textOff="No"
+                                android:textOn="Yes" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
+                            <Switch
+                                android:id="@+id/switch1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:switchMinWidth="56dp"
+                                android:text="Add New User"
+                                android:textOff="No"
+                                android:textOn="Yes" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.10"
+                android:background="@android:color/holo_orange_light"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.65"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <Button
+                    android:id="@+id/btnchangepermission"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.35"
+                    android:text="Change" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="90"
+            android:background="@color/design_default_color_error"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txterror"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
